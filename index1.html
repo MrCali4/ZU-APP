@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zetech Student Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="title">Zetech University App</span>
+        <div class="nav-icons">
+          <button id="homeBtn" class="icon" title="Home">🏠</button>
+          <button id="menuBtn" class="icon" title="Menu">☰</button>
+        </div>
+        <div id="menu" class="dropdown-menu">
+          <a id="about">About</a>
+          <a id="contact">Contact Us</a>
+          <a id="exit">Exit</a>
+        </div>
+      </nav>
+    <div class="container">
+        <img src="logo1.jpg" alt="Zetech Logo" class="logo">
+        <div class="portal-links">
+            <a href="https://portal.zetech.ac.ke"><img src="Student Portal.png" alt="Student Portal"><span>Student Portal</span></a>
+            <a href="https://elearning.zetech.ac.ke"><img src="eLearning.png" alt="Learning Portal"><span>eLearning</span></a>
+            <a href="https://sajili.zetech.ac.ke"><img src="Application.png" alt="Application Portal"><span>Application</span></a>
+            <a href="https://app.myloft.xyz"><img src="MyLoft.png" alt="Library"><span>Library</span></a>
+            <a href="https://www.helb.co.ke"><img src="Helb.jpg" alt="HELB Portal"><span>HELB</span></a>
+            <a href="http://student.zetech.ac.ke/"><img src="results.jpg" alt="Results Portal"><span>Results</span></a>
+        </div>
+        <div class="footer">Powered by KinkyIT</div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("homeBtn").addEventListener("click", function () {
+        window.location.href = "index1.html";
+      });
+      document.getElementById("menuBtn").addEventListener("click", function (e) {
+        e.stopPropagation();
+        const menu = document.getElementById("menu");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      });
+      document.addEventListener("click", function () {
+        document.getElementById("menu").style.display = "none";
+      });
+      document.getElementById("menu").addEventListener("click", function(e) {
+        e.stopPropagation();
+      });
+      document.getElementById("about").addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("Welcome to zetch University App. Developed by KinkyIT services!");
+        document.getElementById("menu").style.display = "none";
+      });
+      document.getElementById("contact").addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("Please contact us at 0742695562");
+        document.getElementById("menu").style.display = "none";
+      });
+      document.getElementById("exit").addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("Exiting the application...");
+        document.getElementById("menu").style.display = "none";
+      });
+    });
+  </script>
+</html>
